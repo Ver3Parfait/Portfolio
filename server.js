@@ -27,7 +27,7 @@ app.use(registerRouter)
 app.use(userRouter)
 app.use(loginRouter)
 
-app.listen(3005,(err)=>{
+app.listen(process.env.PORT,(err)=>{
     if (err) {
        console.log(err); 
     }else{
