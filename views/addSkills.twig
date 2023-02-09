@@ -1,0 +1,30 @@
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/login.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="home">Accueil</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div id="register">
+				<h1>Compétences</h1>
+				<form action="/addSkills" method="POST" enctype="multipart/form-data">
+					<label for="name">Nom:</label>
+					<input type="text" id="name" name="name">
+					<label for="upload_file">Image:</label>
+					<input style="color: #fff;  text-shadow: 5px 7px 7px #000;"  type="file" id="image" name="image">
+					<button type="submit">Valider</button>
+				</form>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>

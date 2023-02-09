@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href=".//css/style.css"/>
+		<link rel="icon" href="./images/svg/logo.svg"/>
+		<link rel="stylesheet" href=".//css/styleResponsive.css">
+		<link rel="stylesheet" href=".//css/CardCSS.css">
+
+		<title>Militello Lucas</title>
+	</head>
+	<body>
+		<section id="page_1">
+			<header>
+				<h1>Portfolio</h1>
+				<nav>
+					<ul>
+						<li><a id="CV_btn" href="addSkills">Ajouter une compétence</a></li>
+						<li><a id="CV_btn" href="addProjects">Ajouter un projects</a></li>
+						<li><a id="CV_btn" href="login">{{userPseudo}}</a></li>
+					</ul>
+				</nav>
+			</header>
+			<h2 id="title_militello">Militello</h2>
+			<h2>Lucas</h2>
+			<p>Un parcour plus que classique, des aptitudes atypiques.</p>
+			<button onclick="start()" id="start_btn">
+				start
+				<img src="./images/svg/Polygon.svg" alt=""/>
+			</button>
+			<p id="promo">
+				Faite un tour sur mon site pour pouvoir vous faire un avis objectif !
+			</p>
+		</section>
+		<main>
+			<section id="page_2">
+				<div class="nav_round">
+					<a href="#page_1" class="round"><img class="height_round" src="./images/svg/home.svg" alt=""></a>
+					<a href="#page_2" class="roundPage"><img class="height_round" src="./images/ComPink.png" alt=""></a>
+					<a href="#page_3" class="round"><img class="height_round" src="./images/svg/CV.svg" alt=""></a>
+					<a href="#page_4" class="round"><img class="height_round" src="/images/svg/dossier.svg" alt=""></a>
+					<img class="line_nav" src="./images/svg/line_nav.svg" alt=""/>
+				</div>
+
+				<h2 id="projets">Mes compétences</h2>
+				<div class="line">
+					<img class="line_blue" src="./images/svg/line_blue.svg" alt=""/>
+				</div>
+				<p id="p2">
+					Toutes mes compétences en un seul coup d'oeil !
+				</p>
+				<div class="container">
+					{% for skill in skills %}
+						<div class="card2">
+							<h3 class="title">{{skill.name}}</h3>
+							<div class="bar">
+								<div class="emptybar"></div>
+								<div class="filledbar"></div>
+							</div>
+							<div class="circle2">
+								<img src="./images/{{skill.image}}" alt="">
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<a class="click" href="#page_1"><img src="./images/svg/up_page.svg" alt=""></a>
+			</section>
+			<section id="page_4">
+				<div class="nav_round">
+					<a href="#page_1" class="round"><img class="height_round" src="./images/svg/home.svg" alt=""></a>
+					<a href="#page_2" class="round"><img class="height_round" src="./images/CompGreen.png" alt=""></a>
+					<a href="#page_3" class="round"><img class="height_round" src="./images/svg/CV.svg" alt=""></a>
+					<a href="#page_4" class="roundPage"><img class="height_round" src="./images/svg/dossierColor.svg" alt=""></a>
+					<img class="line_nav" src="./images/svg/line_nav.svg" alt=""/>
+				</div>
+
+				<h2 id="projets">Mes</h2>
+				<h2 id="projets_2">Projects</h2>
+				<div class="line">
+					<img class="line_blue" src="./images/svg/line_blue.svg" alt=""/>
+				</div>
+				<p id='p4'>
+					Tous mes projets regrouper par  catégorie , certain projet regroupent plusieurs catégorie .
+				</p>
+				<div class="container">
+					{% for project in projects %}
+						<div class="card">
+							<a class="link" href="{{project.link}}">Lien vers le projet</a>
+							<h3 class="title">{{project.name}}</h3>
+							<div class="circle">
+								<img src="./images/{{project.image}}" alt="">
+							</div>
+						</div>
+					{% endfor %}
+					<a class="click2" href="#page_2"><img src="./images/svg/up_page.svg" alt=""></a>
+				</div>
+			</section>
+		</main>
+		<script src="./js/scroll.js"></script>
+	</body>
+</html>

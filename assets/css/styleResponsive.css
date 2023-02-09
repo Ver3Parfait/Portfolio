@@ -1,0 +1,98 @@
+@media screen and (max-width: 823px) {
+  .hide {
+    display: none;
+  }
+
+  #page_1 h2 {
+    font-size: 20px;
+  }
+  #page_1 #title_militello {
+    font-size: 30px;
+  }
+
+  #hiden {
+    max-height: 80%;
+    max-width: 80%;
+  }
+
+  .line_nav {
+    width: 95%;
+  }
+
+  .line {
+    max-height: 80%;
+  }
+  .click,
+  .click2,
+  .click3 {
+    display: none;
+  }
+  .nav_round {
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    margin: auto;
+    float: none;
+    padding-top: 10px;
+  }
+  #projets {
+    padding: 0;
+    text-align: center;
+    margin: auto;
+  }
+  #page_1 {
+    z-index: 99;
+    justify-content: space-around;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #page_1.background {
+    filter: blur(10px);
+  }
+  #page_1 #title_militello {
+    margin: 0;
+  }
+  header {
+    padding: 0;
+  }
+  #start_btn {
+    margin: 0;
+  }
+  #page_1 h2 {
+    margin: 0;
+  }
+  #page_1 p {
+    text-align: center;
+    margin: 0;
+  }
+  #page_1 #promo {
+    margin: 0;
+  }
+  #page_2 p {
+    margin: 0;
+  }
+  #projets_2 {
+    text-align: center;
+    margin: 0;
+  }
+  #p4 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+  }
+  #p2 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+  }
+  #p3 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+  }
+  .card{
+    width: 80%;
+  }
+}

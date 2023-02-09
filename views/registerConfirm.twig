@@ -1,0 +1,30 @@
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/register.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#page_2">{{message}}</a></li>
+					<li><a href="login">Déja enregistré ?</a></li>
+					<li><a id="home" href="home">Accueil</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div style="margin-top:0px;" id="register">
+				<h1>S'enregistrer</h1>
+				<form action="/registerConfirm" method="POST">
+					<label for="token">E-mail confirmation:</label>
+					<input autocomplete="off" type="token" id="token" name="token">
+					<button type="submit">Valider</button>
+				</form>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>

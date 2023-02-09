@@ -1,0 +1,31 @@
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/login.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="home">Accueil</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div id="register">
+				<h1>Connexion</h1>
+				<form action="/login" method="POST">
+					<label for="email">E-mail:</label>
+					<input autocomplete="off" value="{{email}}" type="email" id="email" name="email">
+					<label for="password">MDP:</label>
+					<input autocomplete="off" type="password" id="password" name="password">
+					<button type="submit">Connexion</button>
+				</form>
+                <a href="register">Vous n'êtes pas enregistré ?</a>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>

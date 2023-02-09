@@ -1,0 +1,40 @@
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/register.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="login">Déja enregistré ?</a></li>
+					<li><a id="home" href="home">Accueil</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div style="margin-top:0px;" id="register">
+				<h1>S'enregistrer</h1>
+				<form action="/register" method="POST">
+					<label for="pseudo">Pseudo:</label>
+					<input autocomplete="off" type="text" id="pseudo" name="pseudo" value="{{pseudo}}">
+					<label for="name">Nom:</label>
+					<input autocomplete="off" type="text" id="name" name="name" value="{{name}}">
+					<label for="firstname">Prenom:</label>
+					<input autocomplete="off" type="text" id="firstname" name="firstname" value="{{user.firstname}}">
+					<label for="email">E-mail:</label>
+					<input autocomplete="off" type="email" id="email" name="email" value="{{email}}">
+					<label for="password">Mot de passe:</label>
+					<input autocomplete="off" type="password" id="password" name="password">
+					<label for="password2">Mot de passe confirmation:</label>
+					<input autocomplete="off" type="password" id="password2" name="password2">
+					<button type="submit">Valider</button>
+				</form>
+					<a href="#page_2">{{message}}</a>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>
