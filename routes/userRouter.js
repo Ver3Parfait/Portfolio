@@ -5,6 +5,14 @@ const SkillsModel = require("../models/skills.js");
 const ProjectsModel = require("../models/projects.js");
 const UserModel = require("../models/user.js");
 
+userRouter.get("/", async (req, res) => {
+  try {
+    res.redirect('/home')
+  } catch (err) {
+    res.send(err);
+  }
+});
+
 userRouter.get("/home", async (req, res) => {
   try {
     let skills = await SkillsModel.find();
