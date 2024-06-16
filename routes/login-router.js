@@ -1,7 +1,7 @@
 const express = require("express");
 const loginRouter = express.Router();
 const UserModel = require("../models/user.js");
-const crypto = require("../CustomDependence/crypto.js");
+const crypto = require("../custom-dependencies/crypto.js");
 
 loginRouter.get("/login", async (req, res) => {
   try {

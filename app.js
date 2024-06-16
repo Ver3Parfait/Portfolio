@@ -1,45 +1,57 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const session = require('express-session')
-const mailRouter = require('./routes/mailRouter.js')
-const skillsRouter = require('./routes/skillsRouter.js')
-const loginRouter = require('./routes/loginRouter.js')
-const registerRouter = require('./routes/registerRouter.js')
-const userRouter = require('./routes/userRouter.js')
-const projectsRouter = require('./routes/projectsRouter.js')
+const session = require('express-session');
 const flash = require('connect-flash');
-const { array } = require('./CustomDependence/multer.js')
+const path = require('path');
 
-const db = process.env.BDD_URL
-const app = express()
+const mailRouter = require('./routes/mail-router.js');
+const skillsRouter = require('./routes/skills-router.js');
+const loginRouter = require('./routes/login-router.js');
+const registerRouter = require('./routes/register-router.js');
+const userRouter = require('./routes/user-router.js');
+const projectsRouter = require('./routes/projects-router.js');
 
-app.use(session({secret:"hey",saveUninitialized: true,resave: true}));
-app.use(flash())
-app.use(express.static('./assets')); 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+const db = process.env.BDD_URL;
+const app = express();
 
-app.use(projectsRouter)
-app.use(skillsRouter)
-app.use(mailRouter)
-app.use(registerRouter)
-app.use(userRouter)
-app.use(loginRouter)
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.listen(process.env.PORT,(err)=>{
-    if (err) {
-       console.log(err); 
-    }else{
-        console.log('Connected');
-    }
-})
+app.use(session({
+    secret: "hey",
+    saveUninitialized: true,
+    resave: true
+}));
+app.use(flash());
+app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-mongoose.set('strictQuery', false);
-mongoose.connect(db,(err)=>{
+app.use(projectsRouter);
+app.use(skillsRouter);
+app.use(mailRouter);
+app.use(registerRouter);
+app.use(userRouter);
+app.use(loginRouter);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, (err) => {
     if (err) {
         console.log(err);
-    }else{
-        console.log("Connected to DB");
+    } else {
+        console.log('Server is running on port', PORT);
     }
-})
+});
+
+mongoose.set('strictQuery', false);
+
+mongoose.connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    console.log('Connected to DB');
+}).catch((err) => {
+    console.error('DB Connection Error: ', err);
+});

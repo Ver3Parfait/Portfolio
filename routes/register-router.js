@@ -1,7 +1,7 @@
 const express = require("express");
 const registerRouter = express.Router();
 const UserModel = require("../models/user.js");
-const crypto = require("../CustomDependence/crypto.js");
+const crypto = require("../custom-dependencies/crypto.js");
 const nodemailer = require("nodemailer");
 const { body, validationResult } = require("express-validator");
 const Token = require("../assets/js/token.js");

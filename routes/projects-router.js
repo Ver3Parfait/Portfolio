@@ -1,8 +1,8 @@
 const express = require("express");
 const projectsRouter = express.Router();
 const ProjectsModel = require('../models/projects.js')
-const adminGuard = require("../CustomDependence/AdminGuard.js");
-const upload = require('../CustomDependence/multer.js')
+const adminGuard = require("../custom-dependencies/admin-guard.js");
+const upload = require('../custom-dependencies/multer.js')
 
 projectsRouter.get("/addProjects",adminGuard, async (req, res) => {
   try {

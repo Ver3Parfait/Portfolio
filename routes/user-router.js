@@ -1,6 +1,6 @@
 const express = require("express");
 const userRouter = express.Router();
-const routeGuard = require("../CustomDependence/AuthGuard.js");
+const routeGuard = require("../custom-dependencies/auth-guard.js");
 const SkillsModel = require("../models/skills.js");
 const ProjectsModel = require("../models/projects.js");
 const UserModel = require("../models/user.js");
@@ -17,7 +17,7 @@ userRouter.get("/home", async (req, res) => {
   try {
     let skills = await SkillsModel.find();
     let projects = await ProjectsModel.find();
-    res.render("index.twig", {
+    res.render("index.ejs", {
       projects: projects,
       skills: skills,
     });

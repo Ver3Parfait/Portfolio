@@ -1,8 +1,8 @@
 const express = require("express");
 const skillsRouter = express.Router();
 const SkillsModel = require('../models/skills.js')
-const adminGuard = require("../CustomDependence/AdminGuard.js");
-const upload = require('../CustomDependence/multer.js')
+const adminGuard = require("../custom-dependencies/admin-guard.js");
+const upload = require('../custom-dependencies/multer.js')
 
 skillsRouter.get("/addSkills",adminGuard, async (req, res) => {
   try {
